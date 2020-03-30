@@ -10,5 +10,5 @@ namespace phonetic {
 
     std::string removeSpaces(std::string str);
 
-std::bool isOnlySpaces(std::string str);
+bool isOnlySpaces(std::string str);
 };
