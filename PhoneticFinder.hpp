@@ -9,4 +9,6 @@ namespace phonetic {
     std::string tolowercase(std::string a);
 
     std::string removeSpaces(std::string str);
+
+std::bool isOnlySpaces(std::string str);
 };

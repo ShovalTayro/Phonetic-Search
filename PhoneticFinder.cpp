@@ -12,7 +12,7 @@ using namespace std;
 
 namespace phonetic {
 string find(string s1 , string s2){
-    if(s2.size() == 0) throw out_of_range{"the word you entered is empty"};
+    if(s2.size() == 0 || isOnlySpaces(s2)) throw out_of_range{"the word you entered is empty"};
   //check if s2 is only one word
     for (int i = 1; i < s2.size()-1; i++) { 
         if (isspace(s2.at(i)) && !isspace(s2.at(i-1)) && !isspace(s2.at(i+1)) ) throw out_of_range{"You entered more than one word"};
@@ -63,6 +63,14 @@ bool checkWords(string s1 , string s2){
         }
         return true;
     }
+}
+
+//check if the word contains only spaces
+bool isOnlySpaces(string str){
+for(int i = 0; i< str.size(); i++){
+if(!isspace(str.at(i))) return false;
+}
+return true;
 }
 
 //convert a string to lower case
